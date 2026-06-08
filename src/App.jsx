@@ -1,21 +1,15 @@
-import './App.css'
+import Home from './pages/Home'
 import Header from './components/Header'
-import Hero from './components/Hero'
-import About from './components/About'
-import Projects from './components/Projects'
-import Contact from './components/Contact'
-import Footer from './components/Footer'
+import { HashRouter as Router, Routes, Route } from 'react-router-dom'
 
 function App() {
   return (
-    <div className="app">
+    <Router>
       <Header />
-      <Hero />
-      <About />
-      <Projects />
-      <Contact />
-      <Footer />
-    </div>
+      <Routes>
+        <Route path='/' element={<Home />} />
+      </Routes>
+    </Router>
   )
 }
 

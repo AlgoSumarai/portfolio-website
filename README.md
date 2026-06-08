@@ -1,84 +1,16 @@
-# Portfolio Website
+# React + Vite
 
-A modern, responsive portfolio website built with React and Vite.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Features
+Currently, two official plugins are available:
 
-- ✨ Modern and clean design
-- 📱 Fully responsive layout
-- ⚡ Fast performance with Vite
-- 🎨 Customizable sections (Hero, About, Projects, Contact)
-- 🧩 Component-based architecture
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## Getting Started
+## React Compiler
 
-### Prerequisites
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-- Node.js (v18 or higher)
-- npm or yarn
+## Expanding the ESLint configuration
 
-### Installation
-
-1. Clone the repository:
-```bash
-git clone https://github.com/AlgoSumarai/portfolio-website.git
-cd portfolio-website
-```
-
-2. Install dependencies:
-```bash
-npm install
-```
-
-3. Start the development server:
-```bash
-npm run dev
-```
-
-The application will open at `http://localhost:5173`
-
-## Available Scripts
-
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
-- `npm run lint` - Run ESLint
-
-## Project Structure
-
-```
-portfolio-website/
-├── public/          # Static assets
-├── src/
-│   ├── components/  # React components
-│   │   ├── Header.jsx
-│   │   ├── Hero.jsx
-│   │   ├── About.jsx
-│   │   ├── Projects.jsx
-│   │   ├── Contact.jsx
-│   │   └── Footer.jsx
-│   ├── App.jsx      # Main app component
-│   ├── main.jsx     # Entry point
-│   └── index.css    # Global styles
-└── package.json
-
-```
-
-## Customization
-
-1. **Personal Information**: Edit the component files in `src/components/` to add your own content
-2. **Styling**: Modify the CSS files to match your personal brand
-3. **Projects**: Update the projects array in `Projects.jsx` with your own projects
-4. **Contact Links**: Update the links in `Contact.jsx` with your email and social media
-
-## Technologies Used
-
-- React 19
-- Vite 7
-- ESLint
-- CSS3
-
-## License
-
-This project is open source and available under the MIT License.
-
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
