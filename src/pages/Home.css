@@ -143,6 +143,20 @@
   line-height: 1.8;
 }
 
+@keyframes sectionShake {
+  0% { transform: translateX(0); }
+  15% { transform: translateX(-6px); }
+  30% { transform: translateX(6px); }
+  45% { transform: translateX(-4px); }
+  60% { transform: translateX(4px); }
+  75% { transform: translateX(-2px); }
+  100% { transform: translateX(0); }
+}
+
+.scroll-target-shake {
+  animation: sectionShake 0.42s ease-in-out;
+}
+
 .feature-grid,
 .project-grid {
   display: grid;

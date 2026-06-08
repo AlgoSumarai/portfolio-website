@@ -8,19 +8,30 @@ function Home() {
     const section = document.getElementById(sectionId)
     if (!section) return
 
+    const header = document.querySelector('header, .site-header, .header')
+    const offset = header?.offsetHeight ? header.offsetHeight + 24 : 72
     const start = window.pageYOffset
-    const target = section.getBoundingClientRect().top + start - 50
-    const distance = target - start - 20
-    const duration = 900
+    const target = section.getBoundingClientRect().top + start - offset
+    const distance = target - start
+    const duration = 800
     let startTime = null
 
     const ease = (t) => 1 - Math.pow(1 - t, 3)
+
+    const animateShake = () => {
+      section.classList.add('scroll-target-shake')
+      window.setTimeout(() => section.classList.remove('scroll-target-shake'), 420)
+    }
 
     const step = (timestamp) => {
       if (!startTime) startTime = timestamp
       const time = Math.min(1, (timestamp - startTime) / duration)
       window.scrollTo(0, start + distance * ease(time))
-      if (time < 1) window.requestAnimationFrame(step)
+      if (time < 1) {
+        window.requestAnimationFrame(step)
+      } else {
+        animateShake()
+      }
     }
 
     window.requestAnimationFrame(step)
