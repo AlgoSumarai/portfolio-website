@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import './ProjectsCarousel.css'
 
 const projects = [
@@ -46,8 +46,45 @@ export default function ProjectsCarousel() {
   const prev = () => setIndex((i) => (i - 1 + projects.length) % projects.length)
   const next = () => setIndex((i) => (i + 1) % projects.length)
 
+  const touchStartX = useRef(null)
+  const touchEndX = useRef(null)
+  const SWIPE_THRESHOLD = 50
+
+  const handleTouchStart = (event) => {
+    touchStartX.current = event.touches[0]?.clientX ?? null
+  }
+
+  const handleTouchMove = (event) => {
+    touchEndX.current = event.touches[0]?.clientX ?? null
+  }
+
+  const handleTouchEnd = () => {
+    if (touchStartX.current === null || touchEndX.current === null) {
+      touchStartX.current = null
+      touchEndX.current = null
+      return
+    }
+
+    const deltaX = touchStartX.current - touchEndX.current
+    if (Math.abs(deltaX) > SWIPE_THRESHOLD) {
+      if (deltaX > 0) {
+        next()
+      } else {
+        prev()
+      }
+    }
+
+    touchStartX.current = null
+    touchEndX.current = null
+  }
+
   return (
-    <div className="carousel">
+    <div
+      className="carousel"
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+    >
       <div
         className="carousel-track"
         style={{ transform: `translateX(-${index * SLIDE_WIDTH}%)` }}
