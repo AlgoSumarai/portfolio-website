@@ -1,16 +1,60 @@
-# React + Vite
+# Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A lightweight React portfolio website built with Vite.
 
-Currently, two official plugins are available:
+This project includes a simple single-page layout with reusable components for the header, projects carousel, and home section. It is designed for fast local development and easy deployment.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- React with Vite for fast development and build performance
+- Component-based architecture
+- Responsive styling using CSS modules and global styles
+- Simple portfolio project showcase
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Project Structure
 
-## Expanding the ESLint configuration
+- `index.html` — application entry point
+- `src/main.jsx` — React application bootstrap
+- `src/App.jsx` — root application component
+- `src/pages/Home.jsx` — home page content
+- `src/components/Header.jsx` — header/navigation component
+- `src/components/ProjectsCarousel.jsx` — project showcase carousel
+- `src/index.css` — global styles
+- `src/components/*.css` — component-specific styles
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Setup
+
+1. Install dependencies:
+
+```bash
+npm install
+```
+
+2. Start the development server:
+
+```bash
+npm run dev
+```
+
+3. Open the app in your browser at the local URL shown in the terminal.
+
+## Build
+
+To create a production build:
+
+```bash
+npm run build
+```
+
+## Preview
+
+To preview the production build locally:
+
+```bash
+npm run preview
+```
+
+## Notes
+
+- This project uses the standard Vite React template and can be extended for TypeScript or additional styling frameworks.
+- Use `npm run lint` if ESLint is configured in the repository.
