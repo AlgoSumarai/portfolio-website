@@ -421,6 +421,101 @@
   }
 }
 
+.language-logos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+  justify-content: flex-start;
+}
+
+.language-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 64px;
+  min-height: 64px;
+  padding: 0 12px;
+  border-radius: 18px;
+  font-weight: 700;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 8px 16px rgba(15, 23, 42, 0.08);
+  animation: floatLogo 4s ease-in-out infinite;
+}
+
+.language-csharp {
+  background: linear-gradient(135deg, #68217a 0%, #8e44ad 100%);
+}
+
+.language-java {
+  background: linear-gradient(135deg, #5382a1 0%, #f8981d 100%);
+}
+
+.language-javascript {
+  background: linear-gradient(135deg, #f7df1e 0%, #e5c21f 100%);
+  color: #111;
+}
+
+.language-python {
+  background: linear-gradient(135deg, #306998 0%, #ffd43b 100%);
+  color: #111;
+}
+
+.language-sql {
+  background: linear-gradient(135deg, #3b6ebf 0%, #1e3a8a 100%);
+}
+
+.language-aspnet {
+  background: linear-gradient(135deg, #632e8c 0%, #3b0d5c 100%);
+}
+
+.language-webapi {
+  background: linear-gradient(135deg, #1f5a7d 0%, #0c3a53 100%);
+}
+
+.language-html {
+  background: linear-gradient(135deg, #e34f26 0%, #f06529 100%);
+  color: #111;
+}
+
+.language-css {
+  background: linear-gradient(135deg, #264de4 0%, #2965f1 100%);
+}
+
+.language-sqlserver {
+  background: linear-gradient(135deg, #0067b8 0%, #003b70 100%);
+}
+
+.language-mysql {
+  background: linear-gradient(135deg, #00758f 0%, #3d8dbc 100%);
+}
+
+.language-ef {
+  background: linear-gradient(135deg, #047c33 0%, #0a5d23 100%);
+}
+
+.language-linq {
+  background: linear-gradient(135deg, #0f4b71 0%, #1a77a9 100%);
+}
+
+.language-git {
+  background: linear-gradient(135deg, #f34f29 0%, #cf3d21 100%);
+}
+
+.language-postman {
+  background: linear-gradient(135deg, #ef5b25 0%, #d84a16 100%);
+}
+
+@keyframes floatLogo {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-4px) scale(1.02);
+  }
+}
 
 #skills {
   margin-top: 32px;

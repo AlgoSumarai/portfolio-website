@@ -146,15 +146,33 @@ function Home() {
         <div className="feature-grid">
           <article className="feature-card">
             <h3 className="feature-title">Languages</h3>
-            <p className="feature-text">C#, Java, JavaScript, Python, SQL</p>
+            <div className="language-logos" role="list" aria-label="Programming languages">
+              <span className="language-logo language-csharp" role="listitem">C#</span>
+              <span className="language-logo language-java" role="listitem">Java</span>
+              <span className="language-logo language-javascript" role="listitem">JS</span>
+              <span className="language-logo language-python" role="listitem">Py</span>
+              <span className="language-logo language-sql" role="listitem">SQL</span>
+            </div>
           </article>
           <article className="feature-card">
             <h3 className="feature-title">Web</h3>
-            <p className="feature-text">ASP.NET MVC, .NET Web API, HTML, CSS</p>
+            <div className="language-logos" role="list" aria-label="Web technologies">
+              <span className="language-logo language-aspnet" role="listitem">ASP.NET</span>
+              <span className="language-logo language-webapi" role="listitem">Web API</span>
+              <span className="language-logo language-html" role="listitem">HTML</span>
+              <span className="language-logo language-css" role="listitem">CSS</span>
+            </div>
           </article>
           <article className="feature-card">
             <h3 className="feature-title">Databases & tools</h3>
-            <p className="feature-text">SQL Server, MySQL, Entity Framework, LINQ, Git, Postman</p>
+            <div className="language-logos" role="list" aria-label="Databases and tools">
+              <span className="language-logo language-sqlserver" role="listitem">SQL Server</span>
+              <span className="language-logo language-mysql" role="listitem">MySQL</span>
+              <span className="language-logo language-ef" role="listitem">Entity Framework</span>
+              <span className="language-logo language-linq" role="listitem">LINQ</span>
+              <span className="language-logo language-git" role="listitem">Git</span>
+              <span className="language-logo language-postman" role="listitem">Postman</span>
+            </div>
           </article>
         </div>
       </section>
