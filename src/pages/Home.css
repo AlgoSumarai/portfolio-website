@@ -265,6 +265,26 @@
   font-weight: 700;
 }
 
+.contact-link-inline {
+  color: #a5b4fc;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.contact-link-inline:hover {
+  text-decoration: underline;
+}
+
+.contact-icon {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
 @media (max-width: 900px) {
   .home-page {
     padding: 48px 18px 32px;
