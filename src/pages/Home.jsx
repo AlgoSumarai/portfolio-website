@@ -64,11 +64,13 @@ function Home() {
         <div className="hero-visual">
           <div className="visual-copy">
             <p className="visual-copy-label">Software Engineer</p>
-            <h2 className="visual-title">C# · ASP.NET · Web API · SQL</h2>
-            <p className="visual-subtitle">
-              Delivering practical enterprise and educational software through clean architecture,
-              strong database design, and thoughtful front-end work.
-            </p>
+            <div className="language-logos" role="list" aria-label="Programming languages">
+              <span className="language-logo language-csharp" role="listitem">C#</span>
+              <span className="language-logo language-java" role="listitem">Java</span>
+              <span className="language-logo language-javascript" role="listitem">JavaScript</span>
+              <span className="language-logo language-python" role="listitem">Python</span>
+              <span className="language-logo language-sql" role="listitem">SQL</span>
+            </div>
           </div>
         </div>
 
