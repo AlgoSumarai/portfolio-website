@@ -1,4 +1,4 @@
-import './Header.css'
+import '../styles/Header.css'
 import { useState } from 'react'
 
 function Header() {
@@ -39,7 +39,7 @@ function Header() {
           <style>{`
             .main {
               fill: #FFFFFF;
-              font-family: 'JetBrains Mono', 'Fira Code', monospace;
+              font-family: 'WoahDatSnailIsFast', 'Fira Code', monospace;
               font-size: 30px;
               font-weight: 700;
               letter-spacing: -1px;

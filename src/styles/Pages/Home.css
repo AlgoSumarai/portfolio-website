@@ -1,8 +1,18 @@
+@font-face {
+  font-family: 'WoahDatSnailIsFast';
+  src: url('../../assets/fonts/RasterForge.ttf') format('opentype');
+  font-weight: normal;
+  font-style: italic;
+}
+
 .home-page {
   min-height: 100vh;
   padding: 64px 24px 48px;
   max-width: 1180px;
   margin: 0 auto;
+  font-family: 'WoahDatSnailIsFast';
+  font-size: 0.9rem;
+  
 }
 
 .hero {
@@ -63,6 +73,7 @@
   color: #cbd5e1;
   font-size: 1.05rem;
   line-height: 1.85;
+  font-family:'Courier New', Courier, monospace;
 }
 
 .hero-actions {
@@ -128,6 +139,7 @@
   margin: 12px 0 0;
   color: #94a3b8;
   font-size: 0.95rem;
+  font-family:'Courier New', Courier, monospace;
 }
 
 .section-heading {
@@ -141,6 +153,7 @@
   color: #94a3b8;
   max-width: 680px;
   line-height: 1.8;
+  font-family:'Courier New', Courier, monospace;
 }
 
 @keyframes sectionShake {
@@ -197,6 +210,7 @@
   margin: 0;
   color: #cbd5e1;
   line-height: 1.75;
+  font-family:'Courier New', Courier, monospace;
 }
 
 .project-card {
@@ -251,6 +265,7 @@
   margin: 0;
   color: #cbd5e1;
   line-height: 1.8;
+  font-family:'Courier New', Courier, monospace;
 }
 
 .contact-link {
@@ -421,11 +436,11 @@
   min-height: 52px;
   padding: 0 14px;
   border-radius: 18px;
-  font-size: 0.95rem;
+  /* font-size: 0.95rem;
   font-weight: 700;
   color: white;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 16px 32px rgba(15, 23, 42, 0.08);
+  box-shadow: 0 16px 32px rgba(15, 23, 42, 0.08); */
   animation: floatLogo 4s ease-in-out infinite;
 }
 
@@ -525,11 +540,16 @@
   min-height: 64px;
   padding: 0 12px;
   border-radius: 18px;
-  font-weight: 700;
+  /* font-weight: 700;
   color: white;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
-  box-shadow: 0 8px 16px rgba(15, 23, 42, 0.08);
+  box-shadow: 0 8px 16px rgba(15, 23, 42, 0.08); */
   animation: floatLogo 4s ease-in-out infinite;
+}
+
+.language-logo-1 {
+  height: 0.1rem;
+  width: 0.1rem;
 }
 
 .language-csharp {

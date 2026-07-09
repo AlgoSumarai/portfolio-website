@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-import './ProjectsCarousel.css'
+import '../styles/ProjectsCarousel.css'
 
 const projects = [
   {

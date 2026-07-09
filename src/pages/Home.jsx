@@ -1,7 +1,25 @@
 
-import './Home.css'
+import '../styles/Pages/Home.css'
 import graduationImage from '../assets/avatar/graduation_image.svg'
 import ProjectsCarousel from '../components/ProjectsCarousel'
+
+//pl logos
+import cplusLogoImage from '../assets/logos/pl_Logos/cplusplus.svg'
+import csharpLogoImage from '../assets/logos/pl_Logos/csharp.svg'
+import javascriptLogoImage from '../assets/logos/pl_Logos/javascript.svg'
+import phpLogoImage from '../assets/logos/pl_Logos/php.png'
+import pythonLogoImage from '../assets/logos/pl_Logos/python.svg'
+import JavaLogoImage from '../assets/logos/pl_Logos/java.svg'
+
+//web logos
+import netcoreLogoImage from '../assets/logos/other/netcore.svg'
+import laravelLogoImage from '../assets/logos/other/laravel.svg'
+import nodejsLogoImage from '../assets/logos/other/nodejs.svg'
+
+//database and tools logos
+import mysqlLogoImage from '../assets/logos/other/mysql.svg'
+import gitLogoImage from '../assets/logos/other/git.svg'
+import dockerLogoImage from '../assets/logos/other/docker.svg'
 
 function Home() {
   const scrollToSection = (sectionId) => {
@@ -65,11 +83,18 @@ function Home() {
           <div className="visual-copy">
             <p className="visual-copy-label">Software Engineer</p>
             <div className="language-logos" role="list" aria-label="Programming languages">
-              <span className="language-logo language-csharp" role="listitem">C#</span>
+              
+              <img src={JavaLogoImage} className="language-logo" height={25} alt="Not Found"/>
+              <img src={csharpLogoImage} className="language-logo" height={25} alt="Not Found"/>
+              <img src={cplusLogoImage} className="language-logo" height={25} alt="Not Found"/>
+              <img src={pythonLogoImage} className="language-logo" height={25} alt="Not Found"/>
+              <img src={javascriptLogoImage} className="language-logo" height={25} alt="Not Found"/>
+              <img src={pythonLogoImage} className="language-logo" height={25} alt="Not Found"/>
+              {/* <span className="language-logo language-csharp" role="listitem">C#</span>
               <span className="language-logo language-java" role="listitem">Java</span>
               <span className="language-logo language-javascript" role="listitem">JavaScript</span>
               <span className="language-logo language-python" role="listitem">Python</span>
-              <span className="language-logo language-sql" role="listitem">SQL</span>
+              <span className="language-logo language-sql" role="listitem">SQL</span> */}
             </div>
           </div>
         </div>
@@ -149,31 +174,45 @@ function Home() {
           <article className="feature-card">
             <h3 className="feature-title">Languages</h3>
             <div className="language-logos" role="list" aria-label="Programming languages">
-              <span className="language-logo language-csharp" role="listitem">C#</span>
+              <img src={JavaLogoImage} className="language-logo" height={25} alt="Not Found"/>
+              <img src={csharpLogoImage} className="language-logo" height={25} alt="Not Found"/>
+              <img src={cplusLogoImage} className="language-logo" height={25} alt="Not Found"/>
+              <img src={phpLogoImage} className="language-logo" height={25} alt="Not Found"/>
+              <img src={javascriptLogoImage} className="language-logo" height={25} alt="Not Found"/>
+              <img src={pythonLogoImage} className="language-logo" height={25} alt="Not Found"/>
+              {/* <span className="language-logo language-csharp" role="listitem">C#</span>
               <span className="language-logo language-java" role="listitem">Java</span>
               <span className="language-logo language-javascript" role="listitem">JS</span>
               <span className="language-logo language-python" role="listitem">Py</span>
-              <span className="language-logo language-sql" role="listitem">SQL</span>
+              <span className="language-logo language-sql" role="listitem">SQL</span> */}
             </div>
           </article>
           <article className="feature-card">
-            <h3 className="feature-title">Web</h3>
+            <h3 className="feature-title">Backend Frameworks/Enviroments</h3>
             <div className="language-logos" role="list" aria-label="Web technologies">
-              <span className="language-logo language-aspnet" role="listitem">ASP.NET</span>
+              <img src={netcoreLogoImage} className="language-logo" height={20} alt="Not Found"/>
+              <img src={nodejsLogoImage} className="language-logo" height={15} alt="Not Found"/>
+              <img src={laravelLogoImage} className="language-logo" height={45} alt="Not Found"/>
+
+              {/* <span className="language-logo language-aspnet" role="listitem">ASP.NET</span>
               <span className="language-logo language-webapi" role="listitem">Web API</span>
               <span className="language-logo language-html" role="listitem">HTML</span>
-              <span className="language-logo language-css" role="listitem">CSS</span>
+              <span className="language-logo language-css" role="listitem">CSS</span> */}
             </div>
           </article>
           <article className="feature-card">
             <h3 className="feature-title">Databases & tools</h3>
             <div className="language-logos" role="list" aria-label="Databases and tools">
-              <span className="language-logo language-sqlserver" role="listitem">SQL Server</span>
+              <img src={mysqlLogoImage} className="language-logo" height={25} alt="Not Found"/>
+              <img src={dockerLogoImage} className="language-logo" height={20} alt="Not Found"/>
+              <img src={gitLogoImage} className="language-logo" height={25} alt="Not Found"/>
+
+              {/* <span className="language-logo language-sqlserver" role="listitem">SQL Server</span>
               <span className="language-logo language-mysql" role="listitem">MySQL</span>
               <span className="language-logo language-ef" role="listitem">Entity Framework</span>
               <span className="language-logo language-linq" role="listitem">LINQ</span>
               <span className="language-logo language-git" role="listitem">Git</span>
-              <span className="language-logo language-postman" role="listitem">Postman</span>
+              <span className="language-logo language-postman" role="listitem">Postman</span> */}
             </div>
           </article>
         </div>
