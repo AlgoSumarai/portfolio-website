@@ -64,9 +64,9 @@ function Home() {
             {/* <p className="eyebrow">Resume & portfolio</p> */}
             <h1 className="hero-title">Sennelo Mulanga Gundo</h1>
             <p className="hero-text">
-              Graduate Software Engineer with hands-on experience in C#, ASP.NET MVC, .NET Web API, SQL,
-              Entity Framework, and LINQ. I build reliable backend systems and polished front-end
-              interfaces while working across the software development life cycle.
+              Graduate Software Engineer with hands-on experienced in designing and building RESTful APIs, backend services,
+               and full-stack applications with C#/.NET, PHP/Laravel, SQL, and JavaScript/TypeScript,
+                with production exposure across the full software development lifecycle (design, implementation, testing, debugging, deployment).
             </p>
           <div className="hero-actions">
             <button className="primary-button" type="button" onClick={() => scrollToSection('experience')}>
