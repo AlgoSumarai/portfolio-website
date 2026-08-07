@@ -3,6 +3,14 @@ import '../styles/ProjectsCarousel.css'
 
 const projects = [
   {
+    title: 'AlgoDojo',
+    text:
+      'Interactive Data Structures & Algorithms learning platform built with Next.js, TypeScript, React, Tailwind CSS, Zustand, and Framer Motion, featuring reusable visualizations for sorting, searching, trees, graphs, stacks, queues, heaps, and hash maps through a scalable component-based architecture.',
+    meta: 'Next.js · TypeScript · React · Tailwind CSS',
+    link: 'https://algo-dojo-bice.vercel.app',
+    linkLabel: 'View Live'
+  },
+  {
     title: 'KitchenBuddy API',
     text:
       'ASP.NET Core Web API using C#, Entity Framework, LINQ, and SQL to expose RESTful backend endpoints for a recipe and kitchen management experience.',
@@ -105,6 +113,15 @@ export default function ProjectsCarousel() {
                 ) : p.link.includes('youtu.be') || p.link.includes('youtube.com') ? (
                   <svg className="project-link-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                     <path d="M23.498 6.186a2.998 2.998 0 0 0-2.105-2.114C19.462 3.5 12 3.5 12 3.5s-7.462 0-9.393.572A2.998 2.998 0 0 0 .502 6.186 31.05 31.05 0 0 0 0 12a31.05 31.05 0 0 0 .502 5.814 2.998 2.998 0 0 0 2.105 2.114C4.538 20.5 12 20.5 12 20.5s7.462 0 9.393-.572a2.998 2.998 0 0 0 2.105-2.114A31.05 31.05 0 0 0 24 12a31.05 31.05 0 0 0-.502-5.814zM9.75 15.02V8.98L15.75 12l-6 3.02z" />
+                  </svg>
+                ) : p.link.includes('vercel.app') ? (
+                  <svg
+                    className="project-link-icon"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <path d="M12 3L22 21H2L12 3Z" />
                   </svg>
                 ) : (
                   <svg className="project-link-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">

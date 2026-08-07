@@ -151,11 +151,21 @@ function Home() {
             <p className="project-text">
               TheRad · Remote | Sep. 2025 – Apr. 2026
             </p>
+            <br />
             <p className="project-text">
-              • Solely developed a web-based learning platform with 26 math games using HTML, CSS, and JavaScript.
-              <br />• Assisted in building a modular ERP system for a manufacturing client with Laravel and Filament.
-              <br />• Maintained and debugged an existing Joomla/PHP production site, improving stability.
-              <br />• Gained experience across development, debugging, testing, and deployment.
+              • Backend Engineering: Developed and maintained backend modules for a modular ERP system serving a manufacturing client using Laravel (PHP) and Filament, implementing business logic, structured workflows, and admin functionality.
+              <br />
+              <br />
+              • Data Modelling: Designed and worked with relational data models and queries underpinning ERP business workflows, ensuring data integrity across backend modules.
+              <br />
+              <br />
+              • Production Support: Diagnosed and resolved production defects on a client-facing Joomla/PHP website, improving stability and reducing recurring functional issues in a live environment.
+              <br />
+              <br />
+              • End-to-End Delivery: Independently designed, built, and shipped an interactive learning platform of 26 maths games using JavaScript, HTML, and CSS, owning the architecture, application logic, and deployment end to end.
+              <br />
+              <br />
+              • SDLC: Contributed across the full software development lifecycle, including implementation, testing, debugging, and deployment, within a collaborative remote engineering team.
             </p>
           </article>
         </div>
