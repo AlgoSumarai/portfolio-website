@@ -58,3 +58,12 @@ npm run preview
 
 - This project uses the standard Vite React template and can be extended for TypeScript or additional styling frameworks.
 - Use `npm run lint` if ESLint is configured in the repository.
+
+
+# Redeployment
+
+To redploy repo to github pages
+
+``` bash
+deployment.bat
+```
