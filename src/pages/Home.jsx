@@ -109,7 +109,7 @@ function Home() {
             <p className="stat-label">Software Engineer</p>
           </article>
           <article className="stat-card">
-            <p className="stat-value" style={{ fontSize: '1.45rem' }}>
+            <p className="stat-value" style={{ fontSize: '1.35rem' }}>
               mgsennelo@gmail.com
             </p>
             <p className="stat-label">Email</p>
