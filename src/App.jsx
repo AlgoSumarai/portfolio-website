@@ -1,16 +1,14 @@
-import Home from './pages/Home'
-import Header from './components/Header'
-import { HashRouter as Router, Routes, Route } from 'react-router-dom'
+﻿import Header from "./components/Header";
+import Home from "./pages/Home";
 
-function App() {
+export default function App() {
   return (
-    <Router>
+    <>
+      <a className="skip-link" href="#main">
+        Skip to content
+      </a>
       <Header />
-      <Routes>
-        <Route path='/' element={<Home />} />
-      </Routes>
-    </Router>
-  )
+      <Home />
+    </>
+  );
 }
-
-export default App

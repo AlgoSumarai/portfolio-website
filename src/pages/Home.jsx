@@ -1,273 +1,364 @@
+﻿import { base, profile, projects, skills, experience } from "../data/portfolio";
+import ProjectCard from "../components/ProjectCard";
 
-import '../styles/Pages/Home.css'
-import graduationImage from '../assets/avatar/graduation_image.svg'
-import ProjectsCarousel from '../components/ProjectsCarousel'
 
-//pl logos
-import cplusLogoImage from '../assets/logos/pl_Logos/cplusplus.svg'
-import csharpLogoImage from '../assets/logos/pl_Logos/csharp.svg'
-import javascriptLogoImage from '../assets/logos/pl_Logos/javascript.svg'
-import phpLogoImage from '../assets/logos/pl_Logos/php.png'
-import pythonLogoImage from '../assets/logos/pl_Logos/python.svg'
-import JavaLogoImage from '../assets/logos/pl_Logos/java.svg'
+const scrollToSection = (e, id) => {
+  e.preventDefault();
 
-//web logos
-import netcoreLogoImage from '../assets/logos/other/netcore.svg'
-import laravelLogoImage from '../assets/logos/other/laravel.svg'
-import nodejsLogoImage from '../assets/logos/other/nodejs.svg'
+  document.querySelector(id)?.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+};
 
-//database and tools logos
-import mysqlLogoImage from '../assets/logos/other/mysql.svg'
-import gitLogoImage from '../assets/logos/other/git.svg'
-import dockerLogoImage from '../assets/logos/other/docker.svg'
-
-function Home() {
-  const scrollToSection = (sectionId) => {
-    const section = document.getElementById(sectionId)
-    if (!section) return
-
-    const header = document.querySelector('header, .site-header, .header')
-    const offset = header?.offsetHeight ? header.offsetHeight + 24 : 72
-    const start = window.pageYOffset
-    const target = section.getBoundingClientRect().top + start - offset
-    const distance = target - start
-    const duration = 800
-    let startTime = null
-
-    const ease = (t) => 1 - Math.pow(1 - t, 3)
-
-    const animateShake = () => {
-      section.classList.add('scroll-target-shake')
-      window.setTimeout(() => section.classList.remove('scroll-target-shake'), 420)
-    }
-
-    const step = (timestamp) => {
-      if (!startTime) startTime = timestamp
-      const time = Math.min(1, (timestamp - startTime) / duration)
-      window.scrollTo(0, start + distance * ease(time))
-      if (time < 1) {
-        window.requestAnimationFrame(step)
-      } else {
-        animateShake()
-      }
-    }
-
-    window.requestAnimationFrame(step)
-  }
-
+function SectionHeading({ number, label, title, children }) {
   return (
-    <main id="top" className="home-page">
-      <section className="hero">
-        <div className="hero-copy-row">
-          <img className="hero-avatar" src={graduationImage} alt="Graduation cap illustration" />
+    <div className="section-heading">
+      <div>
+        <p className="eyebrow">
+          <span>{number}</span> / {label}
+        </p>
+        <h2>{title}</h2>
+      </div>
+      {children && <p className="section-description">{children}</p>}
+    </div>
+  );
+}
+
+function Hero() {
+  return (
+    <section className="hero" aria-labelledby="hero-title">
+      <div className="container">
+        <div className="hero-grid">
           <div className="hero-copy">
-            {/* <p className="eyebrow">Resume & portfolio</p> */}
-            <h1 className="hero-title">Sennelo Mulanga Gundo</h1>
-            <p className="hero-text">
-              Graduate Software Engineer with hands-on experienced in designing and building RESTful APIs, backend services,
-               and full-stack applications with C#/.NET, PHP/Laravel, SQL, and JavaScript/TypeScript,
-                with production exposure across the full software development lifecycle (design, implementation, testing, debugging, deployment).
+            <p className="eyebrow hero-eyebrow">
+              <span className="location-dot" /> JOHANNESBURG, SOUTH AFRICA
             </p>
-          <div className="hero-actions">
-            <button className="primary-button" type="button" onClick={() => scrollToSection('experience')}>
-              View experience
-            </button>
-            <button className="secondary-button" type="button" onClick={() => scrollToSection('contact')}>
-              Contact me
-            </button>
+            <h1 id="hero-title">
+              Sennelo Mulanga
+              <br />
+              <span>Gundo.</span>
+            </h1>
+            <p className="professional-title">
+              Junior Software Engineer <span>/</span> Backend & Full-Stack
+            </p>
+            <p className="hero-description">
+              Driven by a genuine passion for building with code.
+              <br className="desktop-break" /> Writing code that contributes to meaningful solutions 
+              for real-world problems.
+            </p>
+
+            <p className="core-stack">
+              C# / .NET <span>·</span> PHP / Laravel <span>·</span> SQL{" "}
+              <span>·</span> React / TypeScript
+            </p>
+
+            <div className="hero-actions">
+              <a className="button button-primary" href="#projects" 
+              onClick={(e) => scrollToSection(e, "#projects")}>
+                View projects <span aria-hidden="true">↓</span>
+              </a>
+              <a className="button button-outline" href={profile.resume}>
+                View resume <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+
+            <div className="hero-socials">
+              <a href={profile.github}>
+                GitHub <span aria-hidden="true">↗</span>
+              </a>
+              <a href={profile.linkedin}>
+                LinkedIn <span aria-hidden="true">↗</span>
+              </a>
+              <a href="#contact">
+                Contact me <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+
+          <aside className="profile-card" aria-label="Professional profile">
+            <div className="portrait-wrap">
+              <img
+                src={`${base}images/graduation_image.svg`}
+                alt="Sennelo Mulanga Gundo at his University of Johannesburg graduation"
+                width="269"
+                height="320"
+                fetchPriority="high"
+              />
+              <span className="portrait-caption">
+                UNIVERSITY OF JOHANNESBURG · 2025
+              </span>
+            </div>
+            <div className="profile-card-copy">
+              <span className="eyebrow">ENGINEERING FOCUS</span>
+              <p>
+                Backend foundations.
+                <br />
+                Full-stack delivery.
+              </p>
+              <span>APIs · Data models · User interfaces</span>
+            </div>
+          </aside>
+        </div>
+        <div className="snapshot" aria-label="Professional snapshot">
+          <div>
+            <span className="snapshot-label">PROFESSIONAL EXPERIENCE</span>
+            <strong>
+              TheRad <span>/ Junior Software Engineer</span>
+            </strong>
+            <p>Laravel ERP modules & production support</p>
+          </div>
+          <div>
+            <span className="snapshot-label">END-TO-END OWNERSHIP</span>
+            <strong>Math Learning Platform</strong>
+            <p>Architecture, implementation & deployment</p>
+          </div>
+          <div>
+            <span className="snapshot-label">EDUCATION</span>
+            <strong>BSc Information Technology</strong>
+            <p>University of Johannesburg · 2025</p>
           </div>
         </div>
       </div>
-
-        <div className="hero-visual">
-          <div className="visual-copy">
-            <p className="visual-copy-label">Software Engineer</p>
-            <div className="language-logos" role="list" aria-label="Programming languages">
-              
-              <img src={JavaLogoImage} className="language-logo" height={25} alt="Not Found"/>
-              <img src={csharpLogoImage} className="language-logo" height={25} alt="Not Found"/>
-              <img src={cplusLogoImage} className="language-logo" height={25} alt="Not Found"/>
-              <img src={pythonLogoImage} className="language-logo" height={25} alt="Not Found"/>
-              <img src={javascriptLogoImage} className="language-logo" height={25} alt="Not Found"/>
-              <img src={pythonLogoImage} className="language-logo" height={25} alt="Not Found"/>
-              {/* <span className="language-logo language-csharp" role="listitem">C#</span>
-              <span className="language-logo language-java" role="listitem">Java</span>
-              <span className="language-logo language-javascript" role="listitem">JavaScript</span>
-              <span className="language-logo language-python" role="listitem">Python</span>
-              <span className="language-logo language-sql" role="listitem">SQL</span> */}
-            </div>
-          </div>
-        </div>
-
-        <div className="hero-stat-grid">
-          <article className="stat-card">
-            <p className="stat-value">2025</p>
-            <p className="stat-label">BSc Information Technology</p>
-          </article>
-          <article className="stat-card">
-            <p className="stat-value">Junior</p>
-            <p className="stat-label">Software Engineer</p>
-          </article>
-          <article className="stat-card">
-            <p className="stat-value" style={{ fontSize: '1.35rem' }}>
-              mgsennelo@gmail.com
-            </p>
-            <p className="stat-label">Email</p>
-          </article>
-        </div>
-      </section>
-
-      <section id="summary">
-        <h2 className="section-heading">Summary</h2>
-        <p className="section-subtitle">
-          Graduate Software Engineer experienced in ASP.NET MVC, .NET Web API, SQL, Entity Framework,
-          and LINQ. Comfortable working on bug fixes, testing, and learning existing codebases in
-          collaborative environments.
-        </p>
-      </section>
-
-      
-      <section id="education" style={{ marginTop: '32px' }}>
-        <h2 className="section-heading">Education</h2>
-        <div className="project-grid">
-          <article className="project-card">
-            <div>
-              <h3 className="project-title">University of Johannesburg</h3>
-              <p className="project-text">
-                Bachelor of Science in Information Technology
-                <br />Auckland Park, Johannesburg
-                <br />Feb. 2021 – Jul. 2025
-              </p>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section id="experience" style={{ marginTop: '32px' }}>
-        <h2 className="section-heading">Experience</h2>
-        <div className="project-grid">
-          <article className="project-card">
-            <h3 className="project-title">Junior Software Engineer</h3>
-            <p className="project-text">
-              TheRad · Remote | Sep. 2025 – Apr. 2026
-            </p>
-            <br />
-            <p className="project-text">
-              • Backend Engineering: Developed and maintained backend modules for a modular ERP system serving a manufacturing client using Laravel (PHP) and Filament, implementing business logic, structured workflows, and admin functionality.
-              <br />
-              <br />
-              • Data Modelling: Designed and worked with relational data models and queries underpinning ERP business workflows, ensuring data integrity across backend modules.
-              <br />
-              <br />
-              • Production Support: Diagnosed and resolved production defects on a client-facing Joomla/PHP website, improving stability and reducing recurring functional issues in a live environment.
-              <br />
-              <br />
-              • End-to-End Delivery: Independently designed, built, and shipped an interactive learning platform of 26 maths games using JavaScript, HTML, and CSS, owning the architecture, application logic, and deployment end to end.
-              <br />
-              <br />
-              • SDLC: Contributed across the full software development lifecycle, including implementation, testing, debugging, and deployment, within a collaborative remote engineering team.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      
-
-      <section id="projects" style={{ marginTop: '32px' }}>
-        <h2 className="section-heading">Projects</h2>
-        <ProjectsCarousel />
-      </section>
-
-      <section id="skills">
-        <h2 className="section-heading">Programming skills</h2>
-        <div className="feature-grid">
-          <article className="feature-card">
-            <h3 className="feature-title">Languages</h3>
-            <div className="language-logos" role="list" aria-label="Programming languages">
-              <img src={JavaLogoImage} className="language-logo" height={25} alt="Not Found"/>
-              <img src={csharpLogoImage} className="language-logo" height={25} alt="Not Found"/>
-              <img src={cplusLogoImage} className="language-logo" height={25} alt="Not Found"/>
-              <img src={phpLogoImage} className="language-logo" height={25} alt="Not Found"/>
-              <img src={javascriptLogoImage} className="language-logo" height={25} alt="Not Found"/>
-              <img src={pythonLogoImage} className="language-logo" height={25} alt="Not Found"/>
-              {/* <span className="language-logo language-csharp" role="listitem">C#</span>
-              <span className="language-logo language-java" role="listitem">Java</span>
-              <span className="language-logo language-javascript" role="listitem">JS</span>
-              <span className="language-logo language-python" role="listitem">Py</span>
-              <span className="language-logo language-sql" role="listitem">SQL</span> */}
-            </div>
-          </article>
-          <article className="feature-card">
-            <h3 className="feature-title">Backend Frameworks/Enviroments</h3>
-            <div className="language-logos" role="list" aria-label="Web technologies">
-              <img src={netcoreLogoImage} className="language-logo" height={20} alt="Not Found"/>
-              <img src={nodejsLogoImage} className="language-logo" height={15} alt="Not Found"/>
-              <img src={laravelLogoImage} className="language-logo" height={45} alt="Not Found"/>
-
-              {/* <span className="language-logo language-aspnet" role="listitem">ASP.NET</span>
-              <span className="language-logo language-webapi" role="listitem">Web API</span>
-              <span className="language-logo language-html" role="listitem">HTML</span>
-              <span className="language-logo language-css" role="listitem">CSS</span> */}
-            </div>
-          </article>
-          <article className="feature-card">
-            <h3 className="feature-title">Databases & tools</h3>
-            <div className="language-logos" role="list" aria-label="Databases and tools">
-              <img src={mysqlLogoImage} className="language-logo" height={25} alt="Not Found"/>
-              <img src={dockerLogoImage} className="language-logo" height={20} alt="Not Found"/>
-              <img src={gitLogoImage} className="language-logo" height={25} alt="Not Found"/>
-
-              {/* <span className="language-logo language-sqlserver" role="listitem">SQL Server</span>
-              <span className="language-logo language-mysql" role="listitem">MySQL</span>
-              <span className="language-logo language-ef" role="listitem">Entity Framework</span>
-              <span className="language-logo language-linq" role="listitem">LINQ</span>
-              <span className="language-logo language-git" role="listitem">Git</span>
-              <span className="language-logo language-postman" role="listitem">Postman</span> */}
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section id="contact" className="contact-card">
-        <div>
-          <h2 className="contact-title">Get in touch</h2>
-          <p className="contact-text">
-            Email: <a className="contact-link-inline" href="mailto:mgsennelo@gmail.com">
-              <svg className="contact-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M3 6.5C3 5.67157 3.67157 5 4.5 5H19.5C20.3284 5 21 5.67157 21 6.5V17.5C21 18.3284 20.3284 19 19.5 19H4.5C3.67157 19 3 18.3284 3 17.5V6.5Z" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M3.75 7.5L12 13L20.25 7.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-              <span>mgsennelo@gmail.com</span>
-            </a>
-            <br />Mobile: <a className="contact-link-inline" href="tel:+27697949195">
-              <svg className="contact-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M22 16.92V20C22 20.5304 21.7893 21.0391 21.4142 21.4142C20.0391 22.7893 16.2 22 7 12.8C-2.2 3.6-1.41071-0.839844  -0.0371094 0.414213C0.339112 0.789345 0.848687 1 1.37908 1H4.46C4.70354 1 4.93558 1.10536 5.09131 1.29289L7.36 4.32C7.5039 4.5039 7.55388 4.74541 7.49746 4.97717L7.06 7.88C7.01 8.092 6.872 8.287 6.672 8.42L4.94 9.83C6.811 13.001 10.999 17.189 14.17 19.06L15.58 17.33C15.71 17.13 15.9 16.99 16.11 16.94L19.01 16.5C19.2419 16.4448 19.4845 16.4955 19.669 16.64L22.7 18.91C22.8886 19.0709 22.9941 19.3013 22.9941 19.545V22.62C22.9941 23.152 22.7825 23.6642 22.4058 24.0418C22.0292 24.4185 21.517 24.6301 20.985 24.6301H18.125C17.8821 24.63 17.65 24.5246 17.4942 24.3371L15.225 21.31C15.0829 21.1254 15.0322 20.8828 15.0874 20.651L15.52 17.74C15.56 17.55 15.69 17.36 15.88 17.23L18.61 15.82C16.741 12.65 12.553 8.462 9.382 6.59L7.65 8.32C7.52 8.45 7.33 8.58 7.12 8.62L4.21 9.06C3.97907 9.11606 3.73652 9.06536 3.549 8.92086L0.52 6.65C0.330341 6.49012 0.224853 6.25974 0.224853 6.01602V3.08601C0.224853 2.554 0.436458 2.04177 0.81318 1.6641C1.1899 1.28643 1.70209 1.07484 2.2341 1.07484H5.1C5.33 1.07484 5.55 1.16 5.72 1.31L8.02 3.82C8.218 4.004 8.365 4.232 8.443 4.485L9.01 7.6C9.061 7.823 9.007 8.057 8.86 8.25L6.99 10.88C8.861 14.051 13.049 18.239 16.22 20.11L17.65 18.38C17.78 18.25 17.97 18.11 18.18 18.06L21.09 17.62C21.3219 17.565 21.5645 17.6151 21.75 17.76L24.78 19.03" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-              <span>069-794-9195</span>
-            </a>
-          </p>
-          <p className="contact-text">
-            GitHub: <a className="contact-link-inline" href="https://github.com/AlgoSumarai" target="_blank" rel="noopener noreferrer">
-              <svg className="contact-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M12 .5C5.73.5.75 5.48.75 11.75c0 4.96 3.22 9.16 7.69 10.64.56.1.76-.24.76-.53 0-.26-.01-.95-.01-1.86-3.12.68-3.78-1.5-3.78-1.5-.51-1.3-1.25-1.65-1.25-1.65-1.02-.7.08-.69.08-.69 1.13.08 1.72 1.16 1.72 1.16 1 . +0.01 1.66.73 2.06 1.12.64 1.08 1.69.77 2.1.59.06-.46.25-.77.45-.95-2.49-.28-5.11-1.24-5.11-5.52 0-1.22.44-2.22 1.16-3-.12-.29-.5-1.46.11-3.05 0 0 .95-.3 3.12 1.15a10.86 10.86 0 0 1 2.84-.38c.96 0 1.93.13 2.84.38 2.17-1.45 3.12-1.15 3.12-1.15.61 1.59.23 2.76.11 3.05.72.78 1.16 1.78 1.16 3 0 4.29-2.63 5.24-5.13 5.52.26.22.49.65.49 1.31 0 .95-.01 1.72-.01 1.95 0 .29.2.64.77.53A11.26 11.26 0 0 0 23.25 11.75C23.25 5.48 18.27.5 12 .5z"/>
-              </svg>
-              <span>github.com/AlgoSumarai</span>
-            </a>
-            <br />LinkedIn: <a className="contact-link-inline" href="https://linkedin.com/in/mulangasennelo" target="_blank" rel="noopener noreferrer">
-              <svg className="contact-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <rect x="2" y="2" width="20" height="20" rx="2" stroke="currentColor" strokeWidth="1.2"/>
-                <path d="M7 10.5V18" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/>
-                <path d="M7 7.5A1.5 1.5 0 1 0 7 4.5a1.5 1.5 0 0 0 0 3z" stroke="currentColor" strokeWidth="0.8"/>
-                <path d="M12.5 18V13.5c0-1.5 1.2-2 2.2-2 1.2 0 2.3.9 2.3 2.4V18" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/>
-              </svg>
-              <span>linkedin.com/in/mulangasennelo</span>
-            </a>
-          </p>
-        </div>
-        {/* <a className="contact-link" href="mailto:mgsennelo@gmail.com">Send an email</a> */}
-      </section>
-    </main>
-  )
+    </section>
+  );
 }
 
-export default Home
+function Projects() {
+  return (
+    <section className="section container" id="projects">
+      <SectionHeading
+        number="01"
+        label="SELECTED WORK"
+        title="Engineering, in practice."
+      >
+        Three projects. Different problems.
+        <br />A closer look at the systems behind them.
+      </SectionHeading>
+      <div className="project-list">
+        {projects.map((project) => (
+          <ProjectCard key={project.id} project={project} />
+        ))}
+      </div>
+      <div className="additional-projects">
+        <h3>Also built</h3>
+        <article>
+          <span className="eyebrow">COMMERCE · ASP.NET MVC</span>
+          <h4>OJGroceries</h4>
+          <p>
+            A full-stack e-commerce application with authentication, product,
+            order and user workflows backed by SQL Server.
+          </p>
+          <a href="https://youtu.be/ZOF0NhomNN0">
+            Watch project walkthrough <span aria-hidden="true">↗</span>
+          </a>
+        </article>
+        <article>
+          <span className="eyebrow">MACHINE LEARNING · PYTHON</span>
+          <h4>SnakeAI</h4>
+          <p>
+            A reinforcement learning project with PyTorch: state encoding,
+            replay memory and a training loop for an AI-controlled Snake game.
+          </p>
+          <a href="https://github.com/AlgoSumarai/snake-ai-pytorch">
+            Explore repository <span aria-hidden="true">↗</span>
+          </a>
+        </article>
+      </div>
+    </section>
+  );
+}
+
+function Experience() {
+  return (
+    <section className="experience-section" id="experience">
+      <div className="container section">
+        <SectionHeading
+          number="02"
+          label="PROFESSIONAL EXPERIENCE"
+          title="Software beyond the project repo."
+        />
+        <div className="experience-grid">
+          <div className="role-heading">
+            <span className="eyebrow">{experience.dates}</span>
+            <h3>{experience.company}</h3>
+            <p>{experience.title}</p>
+            <span className="role-location">{experience.location}</span>
+            <div className="role-stack">
+              PHP / Laravel
+              <br />
+              Filament · SQL
+              <br />
+              JavaScript · Joomla
+            </div>
+          </div>
+          <div className="experience-points">
+            {experience.points.map(([title, text], index) => (
+              <article key={title}>
+                <span aria-hidden="true">0{index + 1}</span>
+                <div>
+                  <h4>{title}</h4>
+                  <p>{text}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Skills() {
+  return (
+    <section className="section container" id="skills">
+      <SectionHeading
+        number="03"
+        label="TECHNICAL TOOLKIT"
+        title="Skills with context."
+      >
+        Core technologies, connected to the work
+        <br />
+        where I’ve used them.
+      </SectionHeading>
+      <div className="skills-grid">
+        {skills.map((skill, index) => (
+          <article key={skill.name}>
+            <span className="skill-index">0{index + 1}</span>
+            <h3>{skill.name}</h3>
+            <p>{skill.items}</p>
+            <a href={skill.href}>
+              {skill.evidence} <span aria-hidden="true">↗</span>
+            </a>
+          </article>
+        ))}
+      </div>
+      <p className="skills-footnote">
+        Also in my toolkit: Java, Python, Node.js / Express and Linux
+        fundamentals. <a href={profile.resume}>See the full resume ↗</a>
+      </p>
+    </section>
+  );
+}
+
+function About() {
+  return (
+    <section className="about-section" id="about">
+      <div className="container section">
+        <SectionHeading
+          number="04"
+          label="BACKGROUND & APPROACH"
+          title="A solid foundation. A practical mindset."
+        />
+        <div className="about-grid">
+          <article className="education-card">
+            <span className="eyebrow">EDUCATION</span>
+            <h3>
+              Bachelor of Science
+              <br />
+              in Information Technology
+            </h3>
+            <p>University of Johannesburg</p>
+            <div className="education-meta">
+              <span>Feb 2021 — Jul 2025</span>
+              <span>Auckland Park, Johannesburg</span>
+            </div>
+            <a href={profile.resume}>View qualifications in resume ↗</a>
+          </article>
+          <div className="about-copy">
+            <h3>Backend-focused. Comfortable across the stack.</h3>
+            <p>
+              My work connects relational data, backend logic and the interfaces
+              people use. At TheRad, that meant manufacturing ERP workflows,
+              production debugging and independently delivering a maths learning
+              platform.
+            </p>
+            <p>
+              My projects extend that foundation: separating long-running
+              analysis from web requests in ChessLens, and separating algorithm
+              logic from visualisation in AlgoDojo.
+            </p>
+            <p>
+              I bring that practical approach to junior software engineering
+              work: understand the problem, model the data, make behaviour
+              clear, and follow the implementation through testing and delivery.
+            </p>
+            <a className="text-link" href="#contact">
+              Discuss a backend or full-stack opportunity{" "}
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Contact() {
+  return (
+    <section className="contact-section" id="contact">
+      <div className="container contact-grid">
+        <div>
+          <p className="eyebrow">05 / LET’S TALK</p>
+          <h2>
+            Useful software starts
+            <br />
+            with a conversation.
+          </h2>
+          <p>
+            Have a junior backend or full-stack opportunity?
+            <br />
+            Let’s discuss the team, the problems and the work.
+          </p>
+          <a className="contact-email" href={`mailto:${profile.email}`}>
+            {profile.email} <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+        <div className="contact-options">
+          <a href={profile.linkedin}>
+            <span>Connect on LinkedIn</span>
+            <span aria-hidden="true">↗</span>
+          </a>
+          <a href={profile.github}>
+            <span>Explore my GitHub</span>
+            <span aria-hidden="true">↗</span>
+          </a>
+          <a href={profile.resume} download>
+            <span>
+              Download resume <small>PDF</small>
+            </span>
+            <span aria-hidden="true">↓</span>
+          </a>
+          <a href={`tel:${profile.phone}`}>
+            <span>069 794 9195</span>
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export default function Home() {
+
+  return (
+    <>
+      <main id="main">
+        <div id="top" />
+        <Hero />
+        <Projects />
+        <Experience />
+        <Skills />
+        <About />
+        <Contact />
+      </main>
+      <footer className="container footer">
+        <p>
+          <strong>SM.</strong> Sennelo Mulanga Gundo
+        </p>
+        <span>Johannesburg, South Africa</span>
+        <a href="#top">Back to top ↑</a>
+      </footer>
+    </>
+  );
+}

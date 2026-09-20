@@ -1,69 +1,45 @@
-# Portfolio Website
+﻿# Sennelo Mulanga Gundo — engineering portfolio
 
-A lightweight React portfolio website built with Vite.
+Recruiter-first portfolio authored with React and Vite, deployed under `/portfolio-website/` on GitHub Pages.
 
-This project includes a simple single-page layout with reusable components for the header, projects carousel, and home section. It is designed for fast local development and easy deployment.
+## Development
 
-## Features
-
-- React with Vite for fast development and build performance
-- Component-based architecture
-- Responsive styling using CSS modules and global styles
-- Simple portfolio project showcase
-
-## Project Structure
-
-- `index.html` — application entry point
-- `src/main.jsx` — React application bootstrap
-- `src/App.jsx` — root application component
-- `src/pages/Home.jsx` — home page content
-- `src/components/Header.jsx` — header/navigation component
-- `src/components/ProjectsCarousel.jsx` — project showcase carousel
-- `src/index.css` — global styles
-- `src/components/*.css` — component-specific styles
-
-## Setup
-
-1. Install dependencies:
-
-```bash
-npm install
-```
-
-2. Start the development server:
-
-```bash
+```sh
+npm ci
 npm run dev
 ```
 
-3. Open the app in your browser at the local URL shown in the terminal.
+## Validate and preview
 
-## Build
-
-To create a production build:
-
-```bash
+```sh
+npm run lint
 npm run build
-```
-
-## Preview
-
-To preview the production build locally:
-
-```bash
+npm run check
 npm run preview
 ```
 
-## Notes
+The build first compiles the React application, then `scripts/prerender.mjs` renders the same components into the production HTML. Native links and `<details>` disclosures provide all interactions, so the production page needs no client JavaScript. Development still uses React and Vite HMR. If future features require React state or event handlers, add hydration before shipping those features; the current prerender deliberately removes the client entry script.
 
-- This project uses the standard Vite React template and can be extended for TypeScript or additional styling frameworks.
-- Use `npm run lint` if ESLint is configured in the repository.
+## Content and structure
 
+- `src/data/portfolio.js`: professional details, project case studies, skills and experience.
+- `src/pages/Home.jsx`: hero, professional snapshot, projects, experience, skills, education, approach and contact sections.
+- `src/components/ProjectCard.jsx`: reusable project overview and native expandable case study.
+- `src/components/Header.jsx`: persistent navigation with visible mobile links.
+- `src/index.css`: responsive design, focus styles, reduced motion and print rules.
+- `public/Sennelo_Mulanga_CV.pdf`: original supplied resume, available to view/download.
+- `public/images/`: optimised portrait, actual AlgoDojo screenshot and social preview.
+- `index.html`: SEO, social metadata and Person structured data.
+- `docs/redesign-audit.md`: source evidence, audit and implementation decisions.
 
-# Redeployment
+Keep CV dates, contact details and project claims consistent when updating content. Distinguish in-development work from deployed services. Case studies use descriptive fragment URLs such as `#chess-lens`; they do not require routing or a server fallback. The sitemap lists the single canonical page.
 
-To redploy repo to github pages
+The robots file is served beneath the GitHub Pages project path. A domain-wide `/robots.txt` can only be controlled by the owner’s root Pages site; this project cannot override it.
 
-``` bash
-deployment.bat
+## Deploy
+
+```sh
+npm run deploy
 ```
+
+This builds and publishes `dist` with the existing `gh-pages` setup. Local redesign work does not automatically publish the site.

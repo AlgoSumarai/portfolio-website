@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630">
+  <rect width="1200" height="630" fill="#10262e"/>
+  <rect x="74" y="75" width="48" height="4" fill="#bbdcc8"/>
+  <text x="74" y="130" font-family="Helvetica" font-size="17" fill="#bbdcc8">SOFTWARE ENGINEERING / JOHANNESBURG</text>
+  <text x="70" y="257" font-family="Helvetica" font-weight="bold" font-size="76" fill="#f3f6f1">Sennelo Mulanga</text>
+  <text x="70" y="345" font-family="Helvetica" font-weight="bold" font-size="76" fill="#bbdcc8">Gundo.</text>
+  <text x="74" y="415" font-family="Helvetica" font-size="27" fill="#f3f6f1">Junior Software Engineer | Backend &amp; Full-Stack</text>
+  <line x1="74" y1="466" x2="1126" y2="466" stroke="#496067"/>
+  <text x="74" y="520" font-family="Helvetica" font-size="22" fill="#b7c9cd">C# / .NET | PHP / Laravel | SQL | React / TypeScript</text>
+  <text x="74" y="569" font-family="Helvetica" font-size="17" fill="#bbdcc8">PROJECTS / EXPERIENCE / RESUME</text>
+</svg>
