@@ -22,7 +22,8 @@ export default defineConfig({
       weights: [400, 500, 600, 700, 800],
     }],
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [tailwindcss()],
+    base: "/portfolio-website/"
   },
 
   integrations: [sitemap()],

@@ -1,5 +1,6 @@
 {
-  "name": "Grunge",
+  "name": "portfolio-website",
+  "homepage": "https://AlgoSumarai.github.io/portfolio-website",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -13,6 +14,7 @@
     "@astrojs/sitemap": "^3.7.3",
     "@tailwindcss/vite": "^4.1.17",
     "astro": "^7.2.5",
+    "gh-pages": "^6.3.0",
     "tailwindcss": "^4.1.17",
     "tailwindcss-noise": "^1.0.6"
   }
