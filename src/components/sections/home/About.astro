@@ -1,0 +1,26 @@
+---
+// components
+import Heading from "../../elements/Heading.astro";
+import Text from "../../elements/Text.astro";
+import Container from "../../elements/Container.astro";
+import Link from "../../elements/Link.astro";
+import ImageContainer from "../../elements/ImageContainer.astro";
+
+// assets
+import portrait from "../../../assets/images/profile/graduation.png";
+---
+
+<Container variant={'xl'}>
+    <Heading tagName="h2" tagSize="h2" class="text-center">About</Heading>
+    <div class="flex lg:flex-row lg:gap-16 gap-10 flex-col">
+        <div class="flex flex-col items-start gap-6 lg:pt-6 text-base-900 lg:flex-1">
+            <Text variant={'xl'}>I'm a backend-focused software engineer who connects data, business logic and the interfaces people use.</Text>
+            <Text variant={'sm'}>At TheRad, I built Laravel ERP modules, supported a production PHP website and independently delivered a platform of 26 maths games.</Text>
+            <Text variant={'sm'}>My projects explore asynchronous chess analysis, interactive algorithms and recipe APIs. I bring a practical approach: understand the problem, model the data and follow the work through testing and delivery.</Text>
+            <Link variant={'button'} href="/about">More about me</Link>
+        </div>
+        <div class="w-full lg:h-[500px] h-auto lg:flex-1">
+            <ImageContainer src={portrait} alt="Sennelo Mulanga Gundo" />
+        </div>
+    </div>
+</Container>

@@ -1,45 +1,54 @@
-﻿# Sennelo Mulanga Gundo — engineering portfolio
+# Sennelo Mulanga Gundo — Portfolio
 
-Recruiter-first portfolio authored with React and Vite, deployed under `/portfolio-website/` on GitHub Pages.
+- Profile, skills, FAQs, experience and education: `src/data/portfolio.ts`
+- Project case studies: `src/content/*.md`
+- Project screenshots and technical diagrams: `src/content/images/projects/`
+- Downloadable CV: `public/Sennelo_Mulanga_CV.pdf`
 
-## Development
+Run `npm run dev` for local preview and `npm run build` for the static build in
+`dist/`. Set `SITE_URL` to the final site's origin when building for deployment
+so canonical URLs and the sitemap use that address. Deployment under a subpath
+also requires Astro's base configuration and matching internal URL prefixes.
 
-```sh
-npm ci
+## Original template
+
+Grunge - Free Tailwind CSS & Astro Portfolio Website Template
+#### Preview
+
+ - [Demo](https://themewagon.github.io/grunge/)
+
+#### Download
+ - [Download from ThemeWagon](https://themewagon.com/themes/grunge/)
+
+## Getting Started
+
+1. Clone Repository
+```
+git clone https://github.com/themewagon/grunge.git
+```
+2. Install Dependencies
+```
+npm i
+```
+3. Run the development server:
+
+```bash
 npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-## Validate and preview
-
-```sh
-npm run lint
-npm run build
-npm run check
-npm run preview
+## Author 
+```
+Design and code is completely written by Jess Gaspar and development team. 
 ```
 
-The build first compiles the React application, then `scripts/prerender.mjs` renders the same components into the production HTML. Native links and `<details>` disclosures provide all interactions, so the production page needs no client JavaScript. Development still uses React and Vite HMR. If future features require React state or event handlers, add hydration before shipping those features; the current prerender deliberately removes the client entry script.
+## License
 
-## Content and structure
-
-- `src/data/portfolio.js`: professional details, project case studies, skills and experience.
-- `src/pages/Home.jsx`: hero, professional snapshot, projects, experience, skills, education, approach and contact sections.
-- `src/components/ProjectCard.jsx`: reusable project overview and native expandable case study.
-- `src/components/Header.jsx`: persistent navigation with visible mobile links.
-- `src/index.css`: responsive design, focus styles, reduced motion and print rules.
-- `public/Sennelo_Mulanga_CV.pdf`: original supplied resume, available to view/download.
-- `public/images/`: optimised portrait, actual AlgoDojo screenshot and social preview.
-- `index.html`: SEO, social metadata and Person structured data.
-- `docs/redesign-audit.md`: source evidence, audit and implementation decisions.
-
-Keep CV dates, contact details and project claims consistent when updating content. Distinguish in-development work from deployed services. Case studies use descriptive fragment URLs such as `#chess-lens`; they do not require routing or a server fallback. The sitemap lists the single canonical page.
-
-The robots file is served beneath the GitHub Pages project path. A domain-wide `/robots.txt` can only be controlled by the owner’s root Pages site; this project cannot override it.
-
-## Deploy
-
-```sh
-npm run deploy
-```
-
-This builds and publishes `dist` with the existing `gh-pages` setup. Local redesign work does not automatically publish the site.
+ - Design and Code is Copyright &copy; <a href="https://github.com/jessgaspardev" target="_blank">Jess Gaspar</a>
+ - Licensed cover under [MIT]
+ - Distributed by <a href="https://themewagon.com" target="_blank">ThemeWagon</a>

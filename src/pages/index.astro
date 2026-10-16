@@ -1,0 +1,22 @@
+---
+// layout
+import Layout from '../layouts/Layout.astro';
+
+// components
+import Hero from '../components/sections/home/Hero.astro';
+import SelectedWorks from '../components/sections/home/SelectedWorks.astro';
+import Services from '../components/sections/home/Services.astro';
+import About from '../components/sections/home/About.astro';
+import Faq from '../components/sections/home/Faq.astro';
+---
+
+<Layout 
+    title="Home"
+    description="Sennelo Mulanga Gundo is a junior software engineer in Johannesburg focused on backend and full-stack development with C# / .NET, Laravel, SQL and React / TypeScript."
+>
+    <Hero />
+    <SelectedWorks />
+    <Services />
+    <About />
+    <Faq />
+</Layout>

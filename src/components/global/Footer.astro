@@ -1,0 +1,52 @@
+---
+// components
+import Container from "../elements/Container.astro";
+import Heading from "../elements/Heading.astro";
+import Text from "../elements/Text.astro";
+import Link from "../elements/Link.astro";
+
+import { profile } from "../../data/portfolio";
+
+// links
+const socials = [
+    { title: "LinkedIn", href: profile.linkedin },
+    { title: "GitHub", href: profile.github },
+    { title: "Download CV", href: profile.resume },
+    { title: "Email", href: `mailto:${profile.email}` }
+];
+
+const navigation = [
+    { title: "Home", href: "/" },
+    { title: "Works", href: "/works" },
+    { title: "About", href: "/about" },
+    { title: "Contact", href: "/contact" }
+]
+---
+
+<Container variant={'xl'} class="mt-32 pb-8">
+    <div class="flex flex-col gap-10 md:flex-row">
+        <div class="flex-1 md:text-left text-center">
+            <Heading tagName="h3" tagSize="h4" class="text-base-900 mb-5">Find me</Heading>
+            <ul>
+                {
+                    socials.map((social) => (
+                        <li><Link variant={'nav'} href={social.href}>{social.title}</Link></li>
+                    ))
+                }
+            </ul>
+        </div>
+        <div class="flex-1 md:text-right text-center">
+            <Heading tagName="h3" tagSize="h4" class="text-base-900 mb-5">Navigation</Heading>
+            <ul>
+                {
+                    navigation.map((navLink) => (
+                        <li><Link variant={'nav'} href={navLink.href}>{navLink.title}</Link></li>
+                    ))
+                }
+            </ul>
+        </div>
+    </div>
+    <div class="flex flex-col text-center">
+        <Text variant={'sm'} class="text-base-900">{profile.name} © {new Date().getFullYear()} All Rights Reserved</Text>
+    </div>
+</Container>

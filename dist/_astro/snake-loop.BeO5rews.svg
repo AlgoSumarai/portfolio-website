@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+<title>SnakeAI — Reinforcement learning loop</title>
+<rect width="1200" height="800" fill="#191817"/>
+<g fill="none" stroke="#d6d3ce" stroke-width="2"><rect x="34" y="34" width="1132" height="732"/><path d="M72 192h1056M72 700h1056"/></g>
+<g fill="#f5f5f4" font-family="monospace"><text x="72" y="94" font-size="20" letter-spacing="5">REINFORCEMENT LEARNING LOOP</text><text x="68" y="166" font-size="62" font-weight="bold">SnakeAI</text>
+<rect x="72" y="232" width="508" height="182" fill="#242220" stroke="#8d8982"/>
+<text x="96" y="274" font-size="18" fill="#aaa59b">01</text>
+<text x="96" y="320" font-size="29" font-weight="bold">State</text>
+<text x="96" y="356" font-size="19" fill="#ccc8c0">Encode the game state</text>
+<text x="96" y="382" font-size="19" fill="#ccc8c0">Represent the current position</text>
+<rect x="620" y="232" width="508" height="182" fill="#242220" stroke="#8d8982"/>
+<text x="644" y="274" font-size="18" fill="#aaa59b">02</text>
+<text x="644" y="320" font-size="29" font-weight="bold">Action</text>
+<text x="644" y="356" font-size="19" fill="#ccc8c0">Choose a movement</text>
+<text x="644" y="382" font-size="19" fill="#ccc8c0">Apply it to the Snake game</text>
+<rect x="72" y="454" width="508" height="182" fill="#242220" stroke="#8d8982"/>
+<text x="96" y="496" font-size="18" fill="#aaa59b">03</text>
+<text x="96" y="542" font-size="29" font-weight="bold">Experience</text>
+<text x="96" y="578" font-size="19" fill="#ccc8c0">Store transitions</text>
+<text x="96" y="604" font-size="19" fill="#ccc8c0">Maintain replay memory</text>
+<rect x="620" y="454" width="508" height="182" fill="#242220" stroke="#8d8982"/>
+<text x="644" y="496" font-size="18" fill="#aaa59b">04</text>
+<text x="644" y="542" font-size="29" font-weight="bold">Training</text>
+<text x="644" y="578" font-size="19" fill="#ccc8c0">Use stored experience</text>
+<text x="644" y="604" font-size="19" fill="#ccc8c0">Train a PyTorch model</text>
+<text x="72" y="738" font-size="17" letter-spacing="1">PYTHON · PYTORCH · REINFORCEMENT LEARNING</text></g></svg>
