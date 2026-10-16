@@ -6,6 +6,7 @@ import { Font } from "astro:assets";
 import Seo, { type Props as SEOProps } from "../../components/global/Seo.astro";
 
 import { profile } from "../../data/portfolio";
+import { withBase } from "../../utils/withBase";
 
 // Site-wide defaults (edit these once for your whole site) 
 const SITE_NAME    = profile.name;
@@ -41,8 +42,8 @@ const {
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-	<link rel="sitemap" href="/sitemap-index.xml" />
+	<link rel="icon" type="image/svg+xml" href={withBase("/favicon.svg")} />
+	<link rel="sitemap" href={withBase("/sitemap-index.xml")} />
 	<Font cssVariable="--font-grunge" />
 	<Font cssVariable="--font-mono" />
 	<meta name="generator" content={Astro.generator} />
@@ -51,7 +52,7 @@ const {
       description={description}
       titleTemplate={titleTemplate}
       siteName={siteName}
-      ogImage={new URL(ogImage, Astro.site ?? Astro.url.origin).href}
+      ogImage={new URL(withBase(ogImage), Astro.site ?? Astro.url.origin).href}
       twitterSite={twitterSite}
       themeColor={themeColor}
       locale={locale}

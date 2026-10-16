@@ -1,5 +1,6 @@
 ---
 import type { HTMLAttributes } from "astro/types";
+import { withBase } from "../../utils/withBase";
 
 interface Props extends HTMLAttributes<"a"> {
     href: string;
@@ -20,7 +21,7 @@ const variantStyle = {
 }
 ---
 
-<a href={href} 
+<a href={withBase(href)}
     class:list={[baseStyle, variantStyle[variant], className]}
     target={newWindow ? "_blank" : undefined}
     rel={newWindow ? "noopener noreferrer" : undefined}

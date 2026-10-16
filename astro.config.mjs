@@ -7,6 +7,8 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
+  site: process.env.SITE_URL || "https://algosumarai.github.io",
+  base: "/portfolio-website",
   fonts: [
     {
       provider: fontProviders.fontsource(),
@@ -23,9 +25,7 @@ export default defineConfig({
     }],
   vite: {
     plugins: [tailwindcss()],
-    base: "/portfolio-website"
   },
 
   integrations: [sitemap()],
-  site: process.env.SITE_URL || "https://algosumarai.github.io"
 });
