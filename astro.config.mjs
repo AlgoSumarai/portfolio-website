@@ -23,7 +23,7 @@ export default defineConfig({
     }],
   vite: {
     plugins: [tailwindcss()],
-    base: "/portfolio-website/"
+    base: "/portfolio-website"
   },
 
   integrations: [sitemap()],
