@@ -15,15 +15,15 @@ export const profile = {
 export const services = [
     {
         title: "Backend & APIs",
-        text: "I build backend logic and REST APIs with C#, ASP.NET Core, PHP and Laravel. My work includes manufacturing ERP modules, asynchronous analysis workflows and recipe management APIs using EF Core and LINQ.",
+        text: "I've built backend logic and REST APIs with C#, ASP.NET Core, PHP and Laravel. My work includes manufacturing ERP modules, asynchronous analysis workflows and APIs using EF Core and LINQ.",
     },
     {
         title: "Frontend Development",
-        text: "I build interfaces with React, Next.js, TypeScript, JavaScript, Vue.js, HTML and CSS. In AlgoDojo, reusable SVG visualisations and shared playback controls make algorithms easier to explore.",
+        text: "I've built interfaces with React, Next.js, TypeScript, JavaScript, Vue.js, HTML and CSS. In AlgoDojo, I built reusable SVG visualisations and shared playback controls to make algorithms easier to explore.",
     },
     {
         title: "Data & Persistence",
-        text: "I work with PostgreSQL, SQL Server, MySQL and relational data modelling. I connect business rules to database constraints, queries and persistent workflows across APIs and full-stack applications.",
+        text: "I've worked with PostgreSQL, SQL Server, MySQL and relational data modelling. I connect business rules to database constraints, queries and persistent workflows across APIs and full-stack applications.",
     },
     {
         title: "Tools & Delivery",
@@ -34,15 +34,15 @@ export const services = [
 export const faq = [
     {
         title: "What opportunities are you looking for?",
-        text: "I'm interested in junior backend and full-stack software engineering opportunities. I enjoy connecting data models, business logic and useful interfaces, and I'm based in Johannesburg, South Africa.",
+        text: "I'm interested in junior backend and full-stack software engineering opportunities. I enjoy working under the hood, working on the important part users dont get to see but are essential to the products delivery of what the users desires. I'm based in Johannesburg, South Africa.",
     },
     {
         title: "Which technologies do you work with?",
-        text: "My core stack is C# / .NET, PHP / Laravel, SQL and React / TypeScript. My projects also use Next.js, PostgreSQL, EF Core, Docker and Python / PyTorch. The Services section covers my wider toolkit.",
+        text: "My core stack is C# / .NET, mySQL, Next.js but i also work with PHP / Laravel, PostgreSQL, python and C++. My projects also use Docker for containerization. The Services section covers my wider toolkit.",
     },
     {
         title: "What professional experience do you have?",
-        text: "At TheRad, I worked remotely as a Junior Software Engineer from September 2025 to April 2026. I developed Laravel / Filament ERP modules, worked with relational data, delivered a platform of 26 maths games and resolved defects on a client-facing Joomla / PHP website.",
+        text: "At TheRad, I worked remotely as a Junior Software Engineer from September 2025 to April 2026. I developed Laravel / Filament ERP modules, worked with relational data, delivered a platform consisting of 26 maths games and resolved defects on a client-facing Joomla / PHP website.",
     },
     {
         title: "Where can I explore your projects?",
