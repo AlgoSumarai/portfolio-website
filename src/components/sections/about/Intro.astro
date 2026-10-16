@@ -1,0 +1,23 @@
+---
+// components
+import Container from "../../elements/Container.astro";
+import Heading from "../../elements/Heading.astro";
+import Text from "../../elements/Text.astro";
+import ImageContainer from "../../elements/ImageContainer.astro";
+
+// assets
+import portrait from "../../../assets/images/profile/graduation.png";
+---
+
+<Container variant={'xl'}>
+    <Heading tagName="h1" tagSize="h1" class="text-center">Meet Mulanga</Heading>
+    <div class="flex md:flex-row flex-col gap-16 md:items-center">
+        <div class="flex-1 flex flex-col gap-7">
+            <Text variant={'xl'} class="text-base-900">I'm Mulanga Gundo Sennelo, a junior software engineer in Johannesburg focused on backend development and full-stack delivery.</Text>
+            <Text variant={'sm'} class="text-base-900">I hold a BSc in Information Technology from the University of Johannesburg. At TheRad, I developed Laravel / Filament ERP modules, worked with relational data and shipped a maths learning platform. My projects extend that foundation with .NET APIs, background processing and React / TypeScript interfaces. I enjoy building software that solves real-world problems.</Text>
+        </div>
+        <div class="flex-1 md:h-[500px] w-full">
+            <ImageContainer src={portrait} alt="Sennelo Mulanga Gundo at graduation"/>
+        </div>
+    </div>
+</Container>
