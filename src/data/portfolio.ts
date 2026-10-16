@@ -1,7 +1,7 @@
 // Content adapted from https://algosumarai.github.io/portfolio-website/.
 export const profile = {
-    name: "Sennelo Mulanga Gundo",
-    displayName: "Sennelo Mulanga",
+    name: "Mulanga Gundo Sennelo",
+    displayName: "Mulanga Sennelo",
     title: "Junior Software Engineer",
     location: "Johannesburg, South Africa",
     email: "mgsennelo@gmail.com",
